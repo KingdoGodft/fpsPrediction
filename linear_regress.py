@@ -2,9 +2,10 @@ import numpy as np
 import pandas as pd
 import math
 from sklearn import datasets, linear_model
+from csv import writer
 
 def basic():
-    frame_data = pd.read_excel('FPS_DATA.xlsx')
+    frame_data = pd.read_csv('FPS_DATA.csv')
     frame_Y = pd.DataFrame(frame_data['GAME AVG FRAME'], columns = ['GAME AVG FRAME'])
     scale_cols = ['CPU BenchMark', 'GPU BenchMark', 'CPU Core', 'CPU Thread', 'GPU Memory GB', 'GPU Clock Boost MHz', 'GAME NAME']
     data_temp  = frame_data[scale_cols]
@@ -63,3 +64,22 @@ def getApproxFrame(cpu_data):
     print("Average Frame of League of Legends : " + str(Frame3))
 
     return Frame1, Frame2, Frame3
+
+def addData(cpu_data, frame):
+    fileName = "FPS_DATA.csv"
+
+    data = ['Predict', '', cpu_data[0], cpu_data[2], cpu_data[3], '', '', '', cpu_data[1], cpu_data[4], '', cpu_data[5], 1, 'FHD', 'HIGH', '', frame[0], '']
+    data2 = ['Predict', '', cpu_data[0], cpu_data[2], cpu_data[3], '', '', '', cpu_data[1], cpu_data[4], '', cpu_data[5], 2, 'FHD', 'HIGH', '', frame[1], '']
+    data3 = ['Predict', '', cpu_data[0], cpu_data[2], cpu_data[3], '', '', '', cpu_data[1], cpu_data[4], '', cpu_data[5], 3, 'FHD', 'HIGH', '', frame[2], '']
+    
+
+    with open(fileName, 'a', newline='') as f_object:
+        # Pass the CSV  file object to the writer() function
+        writer_object = writer(f_object)
+        # Result - a writer object
+        # Pass the data in the list as an argument into the writerow() function
+        writer_object.writerow(data)
+        writer_object.writerow(data2)  
+        writer_object.writerow(data3)  
+        # Close the file object
+        f_object.close()    

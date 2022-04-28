@@ -12,3 +12,5 @@ cpu_data = list(np.array(input_data, dtype = 'float64'))
 Frame1, Frame2, Frame3 = linear_regress.getApproxFrame(cpu_data)
 
 frame = [Frame1, Frame2, Frame3]
+
+linear_regress.addData(cpu_data, frame)
