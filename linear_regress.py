@@ -56,10 +56,10 @@ def getApproxFrame(cpu_data):
 
     Game2 = lin_reg_coef[2]
     Frame2 = round(float(Game2[0] + Game2[1][0] * cpu_data[0] + Game2[1][1] * cpu_data[1] + Game2[1][2] * cpu_data[2] + Game2[1][3] * cpu_data[3] + Game2[1][4] * cpu_data[4] + Game2[1][5] * cpu_data[5]))
-    print("Average Frame of Cyberpunk2077 : " + str(Frame2))
+    print("Average Frame of PlayerUnknown's Battlegrounds : " + str(Frame2))
 
     Game3 = lin_reg_coef[3]
     Frame3 = round(float(Game3[0] + Game3[1][0] * cpu_data[0] + Game3[1][1] * cpu_data[1] + Game3[1][2] * cpu_data[2] + Game3[1][3] * cpu_data[3] + Game3[1][4] * cpu_data[4] + Game3[1][5] * cpu_data[5]))
-    print("Average Frame of Cyberpunk2077 : " + str(Frame3))
+    print("Average Frame of League of Legends : " + str(Frame3))
 
     return Frame1, Frame2, Frame3
