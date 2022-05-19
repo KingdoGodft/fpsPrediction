@@ -3,7 +3,7 @@ import numpy as np
 
 print("Starting FPS Approx Prog... Enter cpu_bench, gpu_bench, cpu_core, cpu_thread, gpu_mem, gpu_clk_boost")
 
-cpu_bench, gpu_bench, cpu_core, cpu_thread, gpu_mem, gpu_clk_boost = input("Starting FPS Approx Prog... Enter cpu_bench, gpu_bench, cpu_core, cpu_thread, gpu_mem, gpu_clk_boost").split()
+cpu_bench, gpu_bench, cpu_core, cpu_thread, gpu_mem, gpu_clk_boost = input(": ").split()
 
 input_data = [cpu_bench, gpu_bench, cpu_core, cpu_thread, gpu_mem, gpu_clk_boost]
 
